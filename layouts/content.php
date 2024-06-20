@@ -6,8 +6,14 @@
         <?php
             if ($pageinfo == "Biography"){
                 include("content-bio.php");
+            }elseif($pageinfo == "Biography Form"){
+                include("content-bio-form.php");
             }elseif($pageinfo == "Portfolio"){
                 include("content-porto.php");
+            }elseif($pageinfo == "Portfolio Form"){
+                include("content-porto-form.php");
+            }elseif($pageinfo == "Login"){
+                include("content-login.php");
             }
         ?>
         </div>

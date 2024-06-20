@@ -1,7 +1,7 @@
 <?php
         
-        $pageinfo = "Biography Form";
-        $description = "Form Input Biografi";
+        $pageinfo = "Portfolio Form";
+        $description = "Form Input Portofolio";
 
         include("../layouts/head.php");
         include("../layouts/header.php");

@@ -2,7 +2,7 @@
     $servername = "localhost"; // boleh menggunaakn IP 127.0.0.1
     $dbuser = "root";
     $dbpassword = "root";
-    $dbname = "personalweb_fauzan"; // sesuaikan dengan nama DB yg telah dibuat
+    $dbname = "personalweb_setyo"; // sesuaikan dengan nama DB yg telah dibuat
 
     $connect = mysqli_connect($servername, $dbuser, $dbpassword);
 

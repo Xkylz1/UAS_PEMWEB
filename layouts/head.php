@@ -25,6 +25,24 @@
                 <a class="nav-link <?php if ($pageinfo == "Biography") echo "active" ?>" href="../pages/bio.php">Biography</a>
                 <a class="nav-link <?php if ($pageinfo == "Portfolio") echo "active" ?>" href="../pages/porto.php">Portfolio</a>
                 <a class="nav-link" href="#">Contact</a>
+
+                <?php
+                session_start();
+                if (!isset($_SESSION['U']) and (!isset($_SESSION['P']))){
+                    echo '<a class="nav-link" href="../pages/login.php">Login</a>';
+                }
+                else{
+                    include("../configs/connection.php");
+
+                    $usr = $_SESSION['U'];
+                    
+                    $sql = mysqli_query($connect, "select * from user where username = '$usr'");
+                    $data = mysqli_fetch_array($sql); // menjadikan field menjadi ruang array
+
+                    echo '<a class="nav-link" href="#">| &nbsp; Halo, </>'.$data['name'];
+                    echo '<a class="nav-link" href="../pages/logout.php">(Logout)</a>';
+                }
+                ?>
                 </div>
             </div>
         </div>
