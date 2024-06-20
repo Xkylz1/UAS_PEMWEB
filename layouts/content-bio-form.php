@@ -5,7 +5,10 @@
     
     include("../configs/connection.php");
 
-    $idbio = $_GET['id'];
+    // $idbio = $_GET['id'];
+    $idbio = 0;
+
+    // echo $idbio;
     $sql = mysqli_query($connect, "select * from biography where id_bio = '$idbio'");
 
     $data = mysqli_fetch_array($sql); 
