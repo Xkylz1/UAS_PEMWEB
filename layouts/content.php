@@ -14,6 +14,10 @@
                 include("content-porto-form.php");
             }elseif($pageinfo == "Login"){
                 include("content-login.php");
+            }elseif($pageinfo == "user-management"){
+                include("content-um.php");
+            }elseif($pageinfo == "UM Form"){
+                include("content-um-form.php");
             }
         ?>
         </div>

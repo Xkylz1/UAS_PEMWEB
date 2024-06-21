@@ -24,7 +24,7 @@
                 <a class="nav-link <?php if ($pageinfo == "Home") echo "active" ?>" href="../pages/home.php">Home</a>
                 <a class="nav-link <?php if ($pageinfo == "Biography") echo "active" ?>" href="../pages/bio.php">Biography</a>
                 <a class="nav-link <?php if ($pageinfo == "Portfolio") echo "active" ?>" href="../pages/porto.php">Portfolio</a>
-                <a class="nav-link" href="#">Contact</a>
+                <a class="nav-link" href="../pages/user-management.php">UM</a>
 
                 <?php
                 session_start();

@@ -9,19 +9,20 @@ if (!isset($_SESSION['U']) and (!isset($_SESSION['P']))) {
     $hr = "<hr>";
 }
 include ("../configs/connection.php");
-$sql = mysqli_query($connect, "select * from portfolio");
+$sql = mysqli_query($connect, "select * from user");
 ?>
 
-<button class="btn btn-info" <?php echo $hidestatus; ?> onclick="location.href='porto-form.php?id=0'">Add Data</button>
+<button class="btn btn-info" <?php echo $hidestatus; ?> onclick="location.href='um-form.php?id=0'">Add New
+    User</button>
 <?php echo $hr; ?>
 
 <table class="table table-striped">
     <thead>
         <tr>
             <th scope="col">#</th>
-            <th scope="col">Project Name</th>
-            <th scope="col">Year</th>
-            <th scope="col">Description</th>
+            <th scope="col">Nama</th>
+            <th scope="col">Username</th>
+            <!-- <th scope="col">Description</th> -->
             <th scope="col" <?php echo $hidestatus; ?>>Action</th>
         </tr>
     </thead>
@@ -32,15 +33,13 @@ $sql = mysqli_query($connect, "select * from portfolio");
         <tbody>
             <tr>
                 <td scope="row"><?php echo $nomor; ?></td>
-                <td><?php echo $data['project_name']; ?></td>
-                <td><?php echo $data['year']; ?></td>
-                <td><?php echo $data['description']; ?></td>
+                <td><?php echo $data['name']; ?></td>
+                <td><?php echo $data['username']; ?></td>
                 <td <?php echo $hidestatus; ?>>
-                    <a href="porto-form.php?id=<?php echo $data['id_port']; ?>">Edit</a>
+                    <a href="porto-form.php?id=<?php echo $data['id_user']; ?>">Edit</a>
                     |
-                    <a href="../layouts/content-porto-delete.php?id=<?php echo $data['id_port']; ?>"
+                    <a href="../layouts/content-um-delete.php?id=<?php echo $data['id_user']; ?>"
                         onclick="return KonfirmasiHapus()">Delete</a>
-
                 </td>
             </tr>
         </tbody>
@@ -53,6 +52,4 @@ $sql = mysqli_query($connect, "select * from portfolio");
         return confirm("Are you sure you want to delete this item?");
     }
 </script>
-
-
 <!-- end of content portfolio -->
